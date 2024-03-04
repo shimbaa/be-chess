@@ -9,12 +9,17 @@ import org.junit.jupiter.api.Test;
 class PawnTest {
 
     @Test
-    @DisplayName("흰색 폰이 생성되어야 한다")
+    @DisplayName("폰 생성시 입력받은 색상 값")
     public void create() {
-        Pawn whitePawn = new Pawn("white");
-        assertThat(whitePawn.getColor()).isEqualTo("white");
+        String black = "black";
+        String white = "white";
 
-        Pawn blackPawn = new Pawn("black");
-        assertThat(blackPawn.getColor()).isEqualTo("black");
+        verifyPawn(black);
+        verifyPawn(white);
+    }
+
+    private void verifyPawn(final String color) {
+        Pawn pawn = new Pawn(color);
+        assertThat(pawn.getColor()).isEqualTo(color);
     }
 }
