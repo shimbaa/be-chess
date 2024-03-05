@@ -7,7 +7,6 @@ public class Board {
 
     private final List<Pawn> pawns = new ArrayList<>();
 
-
     public void add(final Pawn pawn) {
         this.pawns.add(pawn);
     }
