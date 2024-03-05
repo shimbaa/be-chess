@@ -1,4 +1,4 @@
-package main;
+package chess;
 
 public class Pawn {
 
