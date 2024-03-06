@@ -1,6 +1,5 @@
 package chess;
 
-import chess.pieces.Color;
 import java.util.Scanner;
 
 public class Game {
