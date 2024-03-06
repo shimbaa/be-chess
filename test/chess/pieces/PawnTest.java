@@ -12,7 +12,7 @@ class PawnTest {
 
     @Test
     @DisplayName("폰 생성시 입력받은 색상 값")
-    public void create() {
+    void create() {
         verifyPawn(Color.BLACK, Pawn.BLACK_REPRESENTATION);
         verifyPawn(Color.WHITE, Pawn.WHITE_REPRESENTATION);
     }
@@ -24,7 +24,7 @@ class PawnTest {
 
     @Test
     @DisplayName("폰 생성시 지정된 색상값이 없다면 white가 기본값이어야 한다")
-    public void create_기본생성자() throws Exception {
+    void create_기본생성자() throws Exception {
         Pawn pawn = new Pawn();
         assertEquals(Color.WHITE, pawn.getColor());
         assertThat(pawn.getRepresentation()).isEqualTo(Pawn.WHITE_REPRESENTATION);
