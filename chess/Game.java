@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Game {
 
     private static Board board;
-    private static final String EMPTY_PIECES_REPRESENTATION = "........\n";
 
     public static void main(String[] args) {
 
@@ -17,31 +16,13 @@ public class Game {
             if (command.isStart()) {
                 board = new Board();
                 board.initialize();
+                board.print();
 
-                print();
-                break;
             }
 
         } while (!command.isEnd());
     }
 
-    private static void print() {
-        String outputFormat = getChessPrintFormat();
-        System.out.println(outputFormat);
-    }
-
-    private static String getChessPrintFormat() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        sb.append(board.getPawnsResultFromColor(Color.BLACK)).append("\n");
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        sb.append(board.getPawnsResultFromColor(Color.WHITE)).append("\n");
-        sb.append(EMPTY_PIECES_REPRESENTATION);
-        return sb.toString();
-    }
 
     private static Command getCommand() {
         Scanner scanner = new Scanner(System.in);

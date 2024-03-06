@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
+    private static final String EMPTY_PIECES_REPRESENTATION = "........\n";
 
     private final List<Pawn> pawns = new ArrayList<>();
 
@@ -39,6 +40,24 @@ public class Board {
                 .map(Pawn::getRepresentation)
                 .forEach(sb::append);
 
+        return sb.toString();
+    }
+
+    public void print() {
+        String outputFormat = getChessPrintFormat();
+        System.out.println(outputFormat);
+    }
+
+    private String getChessPrintFormat() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(EMPTY_PIECES_REPRESENTATION);
+        sb.append(getPawnsResultFromColor(Color.BLACK)).append("\n");
+        sb.append(EMPTY_PIECES_REPRESENTATION);
+        sb.append(EMPTY_PIECES_REPRESENTATION);
+        sb.append(EMPTY_PIECES_REPRESENTATION);
+        sb.append(EMPTY_PIECES_REPRESENTATION);
+        sb.append(getPawnsResultFromColor(Color.WHITE)).append("\n");
+        sb.append(EMPTY_PIECES_REPRESENTATION);
         return sb.toString();
     }
 }
