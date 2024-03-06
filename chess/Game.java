@@ -26,6 +26,11 @@ public class Game {
     }
 
     private static void print() {
+        String outputFormat = getChessPrintFormat();
+        System.out.println(outputFormat);
+    }
+
+    private static String getChessPrintFormat() {
         StringBuilder sb = new StringBuilder();
         sb.append(EMPTY_PIECES_REPRESENTATION);
         sb.append(board.getPawnsResultFromColor(Color.BLACK)).append("\n");
@@ -35,7 +40,7 @@ public class Game {
         sb.append(EMPTY_PIECES_REPRESENTATION);
         sb.append(board.getPawnsResultFromColor(Color.WHITE)).append("\n");
         sb.append(EMPTY_PIECES_REPRESENTATION);
-        System.out.println(sb);
+        return sb.toString();
     }
 
     private static Command getCommand() {
