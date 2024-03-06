@@ -6,11 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import chess.Board;
 import chess.pieces.Color;
 import chess.pieces.Pawn;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class BoardTest {
 
     @Test
+    @DisplayName("보드에 추가한 Pawn은 인덱스를 통해 조회할 수 있어야 한다")
     void create() throws Exception {
         Board board = new Board();
 
@@ -26,6 +28,7 @@ public class BoardTest {
     }
 
     @Test
+    @DisplayName("보드 초기화를 통해 흰색과 검은색 pawn이 각각 8개 생성하고 저장해야 한다. 생성된 Pawn들의 ")
     void initialize() throws Exception {
         Board board = new Board();
         board.initialize();
