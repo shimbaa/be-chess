@@ -63,4 +63,12 @@ public class Piece {
     public Representation getRepresentation() {
         return this.name.findRepresentation(color);
     }
+
+    public boolean isWhite() {
+        return this.color == Color.WHITE;
+    }
+
+    public boolean isBlack() {
+        return this.color == Color.BLACK;
+    }
 }

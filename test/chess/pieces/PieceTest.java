@@ -36,4 +36,14 @@ class PieceTest {
         assertThat(piece.getColor()).isEqualTo(color);
         assertThat(piece.getRepresentation()).isEqualTo(representation);
     }
+
+    @Test
+    @DisplayName("생성된 말의 색상값이 정상적으로 설정되어야 한다")
+    void isWhiteOrBlack() {
+        Piece whitePawn = Piece.createWhitePawn();
+        Piece blackPawn = Piece.createBlackPawn();
+
+        assertThat(whitePawn.isWhite()).isTrue();
+        assertThat(blackPawn.isBlack()).isTrue();
+    }
 }
