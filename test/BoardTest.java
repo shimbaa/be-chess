@@ -28,7 +28,7 @@ public class BoardTest {
     }
 
     @Test
-    @DisplayName("보드 초기화를 통해 흰색과 검은색 pawn이 각각 8개 생성하고 저장해야 한다. 생성된 Pawn들의 ")
+    @DisplayName("보드 초기화를 통해 흰색과 검은색 pawn이 각각 8개 생성하고 저장해야 한다. 지정된 색상에 해당하는 Pawn들의 출력 문자를 가져와야 한다")
     void initialize() throws Exception {
         Board board = new Board();
         board.initialize();
