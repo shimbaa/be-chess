@@ -20,6 +20,7 @@ public class Piece {
     public static Piece createWhiteKnight() {
         return new Piece(Name.KNIGHT, Color.WHITE);
     }
+
     public static Piece createBlackKnight() {
         return new Piece(Name.KNIGHT, Color.BLACK);
     }
@@ -54,6 +55,10 @@ public class Piece {
 
     public static Piece createBlackKing() {
         return new Piece(Name.KING, Color.BLACK);
+    }
+
+    public static Piece createBlank() {
+        return new Piece(Name.BLANK, Color.BLANK_COLOR);
     }
 
     public Color getColor() {
