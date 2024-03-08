@@ -1,30 +1,37 @@
 package test;
 
+import static chess.utils.StringUtils.*;
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import chess.Board;
-import chess.pieces.Color;
-import chess.pieces.Pawn;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class BoardTest {
+    private Board board;
+
+    @BeforeEach
+    public void setup() {
+        board = new Board();
+    }
 
     @Test
-    @DisplayName("보드에 추가한 Pawn은 인덱스를 통해 조회할 수 있어야 한다")
-    void create() throws Exception {
-        Board board = new Board();
+    @DisplayName("보드를 초기화 한 이후 보드의 상태는 정해진 형식과 같아야 한다")
+    void create(){
+        board.initialize();
 
-        Pawn white = new Pawn(Color.WHITE, Pawn.WHITE_REPRESENTATION);
-        board.add(white);
-        assertEquals(1, board.size());
-        assertEquals(white, board.findPawn(0));
+        String expected = getExpected();
 
-        Pawn black = new Pawn(Color.BLACK, Pawn.BLACK_REPRESENTATION);
-        board.add(black);
-        assertEquals(2, board.size());
-        assertEquals(black, board.findPawn(1));
+        assertThat(board.showBoard()).isEqualTo(expected);
+    }
+
+    private String getExpected() {
+        String blankRank = appendNewLine("........");
+
+        return appendNewLine("RNBQKBNR") + appendNewLine("PPPPPPPP")
+                + blankRank + blankRank + blankRank + blankRank
+                + appendNewLine("pppppppp") + appendNewLine("rnbqkbnr");
     }
 
     @Test

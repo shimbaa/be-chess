@@ -8,5 +8,9 @@ public class StringUtils {
         return target + NEW_LINE;
     }
 
+    public static void appendNewLine(StringBuilder stringBuilder) {
+        stringBuilder.append(NEW_LINE);
+    }
+
     private StringUtils() {}
 }
