@@ -23,7 +23,10 @@ public enum Name {
             BLACK, QUEEN_BLACK)),
     KING(Map.of(
             WHITE, KING_WHITE,
-            BLACK, KING_BLACK));
+            BLACK, KING_BLACK)),
+
+    BLANK(Map.of(
+            BLANK_COLOR, BLANK_REPRESENTATION));
 
     private final Map<Color, Representation> representation;
 

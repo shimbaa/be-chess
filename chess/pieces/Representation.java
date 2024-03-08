@@ -6,7 +6,9 @@ public enum Representation {
     ROOK_BLACK('R'), ROOK_WHITE('r'),
     BISHOP_BLACK('B'), BISHOP_WHITE('b'),
     QUEEN_BLACK('Q'), QUEEN_WHITE('q'),
-    KING_BLACK('K'), KING_WHITE('k');
+    KING_BLACK('K'), KING_WHITE('k'),
+
+    BLANK_REPRESENTATION('.');
 
     public final char label;
 
