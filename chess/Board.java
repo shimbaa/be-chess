@@ -100,7 +100,7 @@ public class Board {
         StringBuilder sb = new StringBuilder();
         for (List<Piece> rank : pieces) {
             for (Piece piece : rank) {
-                sb.append(piece.getRepresentation().label);
+                sb.append(piece.getRepresentation(piece.getColor()));
             }
             appendNewLine(sb);
         }
