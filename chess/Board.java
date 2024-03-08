@@ -78,12 +78,25 @@ public class Board {
         pieces.add(rank8);
     }
 
-    public void print() {
-        String outputFormat = getChessPrintFormat();
-        System.out.print(outputFormat);
+    public int pieceCount() {
+        int size = 0;
+        for (List<Piece> rank : pieces) {
+            if (!isBlankRank(rank)) {
+                size += rank.size();
+            }
+        }
+        return size;
     }
 
-    private String getChessPrintFormat() {
+    private boolean isBlankRank(List<Piece> rank) {
+        long count = rank.stream()
+                .filter(Piece::isBlank)
+                .count();
+
+        return count == 8;
+    }
+
+    public String showBoard() {
         StringBuilder sb = new StringBuilder();
         for (List<Piece> rank : pieces) {
             for (Piece piece : rank) {

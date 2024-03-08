@@ -76,4 +76,8 @@ public class Piece {
     public boolean isBlack() {
         return this.color == Color.BLACK;
     }
+
+    public boolean isBlank() {
+        return this.color == Color.BLANK_COLOR;
+    }
 }
